@@ -6,12 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity"
     android:orientation="vertical"
+    android:background="@color/colorPrimary"
     >
 
     <LinearLayout
+        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@color/colorPrimary"
         >
     <TextView
         android:id="@+id/textViewHome"
@@ -53,6 +56,8 @@
         android:hint="Loj"
         android:layout_marginLeft="20dp"/>
 
+
+
     <!--<EditText-->
         <!--android:id="@+id/editTextAddress"-->
         <!--android:layout_width="match_parent"-->
@@ -62,24 +67,42 @@
 
     <Button
         android:id="@+id/buttonUpdateSolve"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
+        android:gravity="center"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:text="Apply"/>
+        android:text="Apply"
+        android:background="@drawable/rounded_button_transparent"
+        />
+
+
 
 
         <Button
+
             android:id="@+id/buttonProfile"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:text="Profile" />
+            android:text="Profile"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button_transparent"
+            />
 
 
         <Button
             android:id="@+id/buttonUpdateProfile"
-            android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:text="Update Profile" />
+            android:layout_width="200dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="Update Profile"
+
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button_transparent"
+            />
 
 
     </LinearLayout>

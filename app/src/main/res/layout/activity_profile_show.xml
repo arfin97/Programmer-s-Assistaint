@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileShow"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
 
 
 
@@ -62,7 +63,7 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
     <TextView
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Problem Solve Data:"
@@ -70,28 +71,31 @@
         android:textSize="10dp"/>
 
     <TextView
+        android:layout_marginLeft="10dp"
         android:id="@+id/textViewCf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="CodeForces:"
-
-        android:textSize="20dp"/>
+        android:textColor="@color/colorBlack"
+        android:textSize="25dp"/>
 
     <TextView
+        android:layout_marginLeft="10dp"
         android:id="@+id/textViewUva"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="UVa: "
-
-        android:textSize="20dp"/>
+        android:textColor="@color/colorBlack"
+        android:textSize="25dp"/>
 
     <TextView
+        android:layout_marginLeft="10dp"
         android:id="@+id/textViewLoj"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="LightOj: "
-
-        android:textSize="20dp"/>
+        android:textColor="@color/colorBlack"
+        android:textSize="25dp"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -105,10 +109,11 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="14dp"
-            android:layout_marginLeft="14dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginLeft="7dp"
             android:layout_marginTop="0dp"
-            android:text="Update Data" />
+            android:text="Update\nData"
+            android:background="@drawable/rounded_button_transparent"/>
 
         <Button
 
@@ -118,14 +123,15 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginLeft="9dp"
             android:layout_marginTop="0dp"
-            android:layout_marginEnd="96dp"
-            android:layout_marginRight="96dp"
+            android:layout_marginEnd="102dp"
+            android:layout_marginRight="102dp"
             android:layout_toEndOf="@+id/buttonUpdateData"
             android:layout_toRightOf="@+id/buttonUpdateData"
-            android:text="Update Profile" />
+            android:text="Update Profile"
+            android:background="@drawable/rounded_button_transparent"/>
 
         <Button
             android:id="@+id/logOut"
@@ -133,7 +139,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:text="Log Out" />
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="7dp"
+            android:text="Log Out"
+            android:background="@drawable/rounded_button_transparent"/>
 
     </RelativeLayout>
 
