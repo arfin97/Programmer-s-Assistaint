@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+    <TextView
+        android:id="@+id/textViewHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Info"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Select Date"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"/>
+
+    <EditText
+        android:id="@+id/editTextCf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CF"
+        android:layout_marginLeft="20dp"/>
+
+    <EditText
+        android:id="@+id/editTextUva"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="UVA"
+        android:layout_marginLeft="20dp"/>
+
+    <EditText
+        android:id="@+id/editTextLoj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Loj"
+        android:layout_marginLeft="20dp"/>
+
+    <!--<EditText-->
+        <!--android:id="@+id/editTextAddress"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Address"-->
+        <!--android:layout_marginLeft="20dp" />-->
+
+    <Button
+        android:id="@+id/buttonUpdateSolve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Apply"/>
+
+
+        <Button
+            android:id="@+id/buttonProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Profile" />
+
+
+        <Button
+            android:id="@+id/buttonUpdateProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="Update Profile" />
+
+
+    </LinearLayout>
+
+</ScrollView>

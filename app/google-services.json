@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "13330574125",
+    "firebase_url": "https://programmersassistant-23253.firebaseio.com",
+    "project_id": "programmersassistant-23253",
+    "storage_bucket": "programmersassistant-23253.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:13330574125:android:78c72399a6b131e3",
+        "android_client_info": {
+          "package_name": "com.example.arfin.programmersassistant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "13330574125-ln5brrqqavkqd24kptv6u3co10mu98g6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.arfin.programmersassistant",
+            "certificate_hash": "639b7f6fce2e38bbf35c6b5c16e3d04c136fce9f"
+          }
+        },
+        {
+          "client_id": "13330574125-l1kptq35cpietqlprpa316bq5v3rhr6u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnugwQOhCecZYCJBqS-DNymAZq4bj4CC4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "13330574125-l1kptq35cpietqlprpa316bq5v3rhr6u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
