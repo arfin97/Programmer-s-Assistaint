@@ -24,18 +24,22 @@ public class SolveCountList extends ArrayAdapter<SolveCount> {
 
 
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, View convertView,ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
         View listViewItem = inflater.inflate(R.layout.layout_solvecount_list, null, true);
 
+        TextView textViewDate = (TextView) listViewItem.findViewById(R.id.textViewSolveDate);
         TextView textViewCf = (TextView) listViewItem.findViewById(R.id.textViewSolveCountCf);
         TextView textViewUva = (TextView) listViewItem.findViewById(R.id.textViewSolveCountUva);
         TextView textViewLoj  = (TextView) listViewItem.findViewById(R.id.textViewSolveCountLoj);
+        TextView textViewHr = (TextView) listViewItem.findViewById(R.id.textViewSolveCountHr);
 
         SolveCount solvecount = solvecountlist.get(position);
-        textViewCf.setText(solvecount.getCf());
-        textViewUva.setText(solvecount.getUva());
-        textViewLoj.setText(solvecount.getLoj());
+        textViewDate.setText("Date: " + solvecount.getDate());
+        textViewCf.setText("CodeForces: " + Integer.toString(solvecount.getCf()));
+        textViewUva.setText("Uva: "+ Integer.toString(solvecount.getUva()));
+        textViewLoj.setText("LightOJ: " + Integer.toString(solvecount.getLoj()));
+        textViewHr.setText("HackerRank: " + Integer.toString(solvecount.getHr()));
 
 
         return listViewItem;

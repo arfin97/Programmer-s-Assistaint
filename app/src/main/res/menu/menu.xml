@@ -3,4 +3,10 @@
     <item
         android:id="@+id/menuLogout"
         android:title="Logout" />
+    <!--<item-->
+        <!--android:id="@+id/itemUpdateData"-->
+        <!--android:title="Update Data" />-->
+    <!--<item-->
+        <!--android:id="@+id/itemUpdateProfile"-->
+        <!--android:title="Update Profile" />-->
 </menu>

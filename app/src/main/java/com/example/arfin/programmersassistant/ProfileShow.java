@@ -14,7 +14,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -22,13 +21,13 @@ import android.widget.Toast;
 
 
 import com.bumptech.glide.Glide;
+import com.example.arfin.programmersassistant.solveactivities.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -40,8 +39,6 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 public class ProfileShow extends AppCompatActivity implements View.OnClickListener {
 
     private static final int CHOOSE_IMAGE = 101;
@@ -52,6 +49,7 @@ public class ProfileShow extends AppCompatActivity implements View.OnClickListen
     Button buttonUpdateProfile;
     Button buttonUpdateData;
     Button logOut;
+    Button buttonAllSolveActivity;
 
     Uri uriProfileImage;
     ProgressBar progressBar;
@@ -69,14 +67,23 @@ public class ProfileShow extends AppCompatActivity implements View.OnClickListen
     private FirebaseAuth.AuthStateListener authListener;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_show);
+        //Toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.ic_toolbar);
 
         //Database
+        //Database
         mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
+        String user_id = mAuth.getCurrentUser().getUid();
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id).child("solve_data");
 
         //Textviews
         textViewCf  = (TextView) findViewById(R.id.textViewCf);
@@ -89,17 +96,17 @@ public class ProfileShow extends AppCompatActivity implements View.OnClickListen
         progressBar = (ProgressBar) findViewById(R.id.progressbar);
         textView = (TextView) findViewById(R.id.textViewVerified);
 
-
         loadUserInformation();
-
-
 
         logOut = findViewById(R.id.logOut);
         logOut.setOnClickListener(this);
         buttonUpdateProfile = (Button) findViewById(R.id.buttonUpdateProfile);
         buttonUpdateProfile.setOnClickListener(this);
         buttonUpdateData = (Button) findViewById(R.id.buttonUpdateData);
+        buttonAllSolveActivity = (Button) findViewById(R.id.buttonAllSolveActivity);
         buttonUpdateData.setOnClickListener(this);
+        buttonAllSolveActivity.setOnClickListener(this);
+
 
 
 
@@ -121,22 +128,36 @@ public class ProfileShow extends AppCompatActivity implements View.OnClickListen
     private void fetchSolveData() {
 
 
-        String user_id = mAuth.getCurrentUser().getUid();
-
-        DatabaseReference current_user_db = mDatabase.child(user_id).child("solve_count");
 
 
 
-        current_user_db.addValueEventListener(new ValueEventListener() {
+
+        mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int cf_total = 0;
+                int uva_total = 0;
+                int loj_total = 0;
+
+                Log.d("Creation", "Dhuksi");
+                //iterating through all the nodes
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    //getting artist
+                    SolveCount solvecount = postSnapshot.getValue(SolveCount.class);
+                    cf_total += solvecount.getCf();
+                    uva_total += solvecount.getUva();
+                    loj_total += solvecount.getLoj();
+
+
+
+                    //adding artist to the list
+                }
 
                 try {
-                    SolveCount sc = dataSnapshot.getValue(SolveCount.class);
 
-                    String cf_str = Integer.toString(sc.getCf());
-                    String uva_str = Integer.toString(sc.getUva());
-                    String loj_str = Integer.toString(sc.getLoj());
+                    String cf_str = Integer.toString(cf_total);
+                    String uva_str = Integer.toString(uva_total);
+                    String loj_str = Integer.toString(loj_total);
 
                     textViewCf.setText("Codeforces: "+cf_str);
                     textViewUva.setText("Uva: "+uva_str);
@@ -151,10 +172,6 @@ public class ProfileShow extends AppCompatActivity implements View.OnClickListen
                 } finally {
 
                 }
-
-
-
-
             }
 
             @Override
@@ -262,6 +279,41 @@ public class ProfileShow extends AppCompatActivity implements View.OnClickListen
     }
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.menuLogout:
+
+                FirebaseAuth.getInstance().signOut();
+                finish();
+                startActivity(new Intent(this, MainActivity.class));
+
+                break;
+        }
+
+        return true;
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -297,6 +349,11 @@ public class ProfileShow extends AppCompatActivity implements View.OnClickListen
         if(v.getId() == R.id.buttonUpdateData){
             finish();
             startActivity(new Intent(this, HomeActivity.class));
+        }
+        if(v.getId() == R.id.buttonAllSolveActivity){
+            finish();
+            startActivity(new Intent(this, AllSolve.class));
+
         }
 
     }

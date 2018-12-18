@@ -10,14 +10,16 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@color/colorPrimary">
 
-        <ImageView
-            android:layout_width="85dp"
-            android:layout_height="100dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/app_logo" />
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/programmer2"
+
+            />
+
 
     </RelativeLayout>
 
@@ -43,8 +45,7 @@
                 android:fontFamily="sans-serif"
                 android:hint="email"
                 android:inputType="textEmailAddress"
-                android:paddingBottom="15dp"
-                android:textColorHint="@color/colorAccent" />
+                android:paddingBottom="15dp" />
 
             <EditText
                 android:id="@+id/editTextPassword"
@@ -53,8 +54,7 @@
                 android:fontFamily="sans-serif"
                 android:hint="password"
                 android:inputType="textPassword"
-                android:paddingBottom="15dp"
-                android:textColorHint="@color/colorAccent" />
+                android:paddingBottom="15dp" />
 
             <Button
                 android:id="@+id/buttonSignUp"
@@ -74,8 +74,8 @@
                 android:padding="15dp"
                 android:text="Already have an account? Login"
                 android:textAlignment="center"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-                android:textColor="@color/colorAccent" />
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                 />
 
 
         </LinearLayout>

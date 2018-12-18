@@ -9,52 +9,68 @@
     android:background="@color/colorPrimary"
     >
 
+
     <LinearLayout
+        android:padding="10dp"
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/colorPrimary"
         >
-    <TextView
-        android:id="@+id/textViewHome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Update Info"
-        android:textSize="20dp"
-        />
 
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:id="@+id/tvDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Select Date"
-        android:textAlignment="center"
-        android:layout_centerHorizontal="true"
-        android:textSize="30sp"/>
+        <TextView
+            android:id="@+id/textViewHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add your solve data"
+            android:textAlignment="center"
+            android:textSize="20dp" />
 
-    <EditText
-        android:id="@+id/editTextCf"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="CF"
-        android:layout_marginLeft="20dp"/>
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:hint="Select Date"
+            android:textAlignment="center"
+            android:textSize="30sp" />
 
-    <EditText
-        android:id="@+id/editTextUva"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="UVA"
-        android:layout_marginLeft="20dp"/>
+        <EditText
+            android:id="@+id/editTextCf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-    <EditText
-        android:id="@+id/editTextLoj"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Loj"
-        android:layout_marginLeft="20dp"/>
+            android:hint="CF"
+            android:inputType="number|numberSigned|numberDecimal"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/editTextUva"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="UVA"
+            android:inputType="number|numberSigned|numberDecimal"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/editTextLoj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Loj"
+            android:inputType="number|numberSigned|numberDecimal"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/editTextHr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="HR"
+            android:inputType="number|numberSigned|numberDecimal"
+            android:singleLine="true" />
 
 
 
@@ -65,15 +81,29 @@
         <!--android:hint="Address"-->
         <!--android:layout_marginLeft="20dp" />-->
 
-    <Button
-        android:id="@+id/buttonUpdateSolve"
-        android:layout_width="200dp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:text="Apply"
-        android:background="@drawable/rounded_button_transparent"
-        />
+        <!--<Button-->
+            <!--android:id="@+id/buttonUpdateSolve"-->
+            <!--android:layout_width="200dp"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Apply"-->
+            <!--android:background="@drawable/rounded_button_transparent"-->
+            <!--/>-->
+
+        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+            android:id="@+id/buttonUpdateSolve"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_blue_button"
+            android:text="Apply"
+            android:textColor="@color/colorPrimary"
+            app:spinning_bar_color="#FFF"
+            app:spinning_bar_padding="6dp"
+            app:spinning_bar_width="4dp"
+            android:layout_marginTop="20dp"
+            />
 
 
 
@@ -87,7 +117,8 @@
             android:layout_height="wrap_content"
             android:text="Profile"
             android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_button_transparent"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/rounded_blue_button"
             />
 
 
@@ -101,7 +132,8 @@
             android:text="Update Profile"
 
             android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_button_transparent"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/rounded_blue_button"
             />
 
 

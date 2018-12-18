@@ -4,15 +4,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorPrimary"
+    android:padding="5dp"
     >
 
-
-
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:visibility="gone"
+        />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tap on camera to choose profile picture"
+        android:text="Tap on camera to change profile picture"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
 
@@ -49,40 +55,45 @@
         android:id="@+id/textViewVerified"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Verified"
+        android:text="Verified Account"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
     <Button
         android:id="@+id/buttonSave"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
-        android:background="@drawable/rounded_button_solid"
+        android:background="@drawable/rounded_blue_button"
         android:paddingLeft="55dp"
         android:paddingRight="55dp"
-        android:text="Save"
-        android:textAllCaps="false" />
+        android:text="UPDATE"
+        android:textAllCaps="false"
+
+        android:textColor="@color/colorPrimary" />
+
     <Button
         android:id="@+id/buttonProfile"
-        android:layout_width="200dp"
-        android:layout_gravity="center"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Profile"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:background="@drawable/rounded_button_transparent"
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/rounded_blue_button"
+        android:text="Profile"
 
         />
 
     <Button
         android:id="@+id/logOut"
-        android:layout_width="250dp"
-        android:layout_gravity="center"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Log Out"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:background="@drawable/rounded_button_transparent"
-        />
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/rounded_blue_button"
+        android:text="Log Out"
+        android:visibility="gone"/>
 
 
 

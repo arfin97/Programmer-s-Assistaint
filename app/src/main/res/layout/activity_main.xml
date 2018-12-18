@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".solveactivities.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -77,12 +77,21 @@
             <Button
                 android:id="@+id/buttonLogin"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_margin="7dp"
+                android:layout_marginTop="17dp"
                 android:background="@drawable/rounded_button_transparent"
                 android:text="Login"
                 android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/textViewForgetPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="Forgot Password?"
+                android:textAlignment="center"
+                />
 
             <TextView
                 android:id="@+id/textViewSignup"

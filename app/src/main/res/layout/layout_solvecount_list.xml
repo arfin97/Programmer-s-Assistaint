@@ -3,26 +3,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:padding="20dp"
+
     android:layout_gravity="center">
 
     <TextView
-        android:text="Atif Aslam"
+        android:text="Date"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:id="@+id/textViewSolveCountCf"
+        android:id="@+id/textViewSolveDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+
     <TextView
-        android:text="Rock"
+        android:text="Cf"
+        android:id="@+id/textViewSolveCountCf"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+    <TextView
+        android:text="Uva"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:id="@+id/textViewSolveCountUva"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:text="Rock"
+        android:text="Loj"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:id="@+id/textViewSolveCountLoj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Hr"
+        android:id="@+id/textViewSolveCountHr"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
